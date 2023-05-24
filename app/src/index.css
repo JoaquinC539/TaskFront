@@ -3,9 +3,18 @@
   margin: none;
   
 }
-.primary{
-  background-color: aquamarine;
+
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #efefef;
 }
+
+
+
 
 
 
