@@ -1,9 +1,10 @@
+import './LandPage.scss';
 const LandPage=()=>{
     return(
         <div className="App" >
-        <h1 className="mainTitle text-bg-primary p-3 card-header">Welcome</h1>
+        <h1 className="mainTitle text-bg-primary p-3  card-header">Welcome</h1>
         <h3 className="subTitle">Task assignation is an application to manage task in a team</h3>
-        <p>Team consists of name and unique id. fore every team it can be created users and then assign task to those users with some restrictions:</p>
+        <p className="description">Team consists of name and unique id. fore every team it can be created users and then assign task to those users with some restrictions:</p>
         <ul className="list">
           <li>Exclusive roles: Admin, supervisor and employee</li>
           <li>Department is freely to choose by admins</li>
