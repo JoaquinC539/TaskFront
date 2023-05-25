@@ -24,7 +24,7 @@ const Team=()=>{
             setTimeout(()=>{                
                 navigate("/dash");
                 resetResponse();
-            },5000)
+            },5000);
         }
 
     },[navigate,resetResponse, response])
@@ -55,8 +55,8 @@ const Team=()=>{
                <input type="text" className='form-control' id="adminName" required value={userName} onChange={(e)=>{setUserName(e.target.value)}} />
                 </div> 
                <div className="mb-3">
-               <label className="form-label" htmlFor='teamName' > Password</label>
-               <input type="password" className='form-control' id="teamName" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+               <label className="form-label" htmlFor='password' > New Password</label>
+               <input type="password" className='form-control' id="password" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
                 </div>                 
                 <button type='submit' className='btn btn-primary'>Create Team</button>
             </form>

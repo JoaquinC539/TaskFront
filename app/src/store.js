@@ -8,7 +8,11 @@ export default createStore({
     setUserName:action((state,payload)=>{ state.userName=payload;}),
     password:"",
     setPassword:action((state,payload)=>{ state.password=payload;}),
-    
+    authorizationToken:"",
+    setAuthorizationToken:action((state,payload)=>{state.authorizationToken=payload}),
+    error:{},
+    setError:action((state,payload)=>{state.error=payload}),
+
     response:{},
     setResponse:action((state,payload)=>{state.response=payload}),
     resetResponse:action((state)=>{state.response={}}),
@@ -29,5 +33,29 @@ export default createStore({
             console.log(error.response.data);
         }
     }),
+    login:thunk(async (actions,loginData)=>{
+        try {
+            const request=await api.post('/login',loginData,{withCredentials:true});
+            if(request.error){
+                await actions.setResponse(request);
+            }else if(request.data){
+                await actions.setResponse(request.data);
+            }
+            
+            actions.setUserName("");
+            actions.setPassword("");
+        } catch (error) {
+            actions.setResponse(error.response.data);
+        }
+    }),
+    refreshToken:thunk(async (actions)=>{
+        try {
+            const response=await api.get('/refresh',{withCredentials:true});
+            await actions.setResponse(response.data);
+        } catch (error) {
+            actions.setResponse(error);
+        }
+    }),
+
 
 });

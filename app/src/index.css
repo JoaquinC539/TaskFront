@@ -5,7 +5,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,6 +13,10 @@ body {
   background-color: #efefef;
 }
 
+.App{
+
+  min-height: 100dvh;
+}
 
 
 

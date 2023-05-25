@@ -1,0 +1,21 @@
+.Login{
+    min-height: 85dvh;
+    display: flex;
+    flex-direction: column;
+    .login{
+        align-self: center;
+        width: 80%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;        
+        label{
+            margin-left: 3px;
+        }
+        .btn{
+            justify-self: center;
+        }
+    }
+    .desc{
+        align-self: center;
+    }
+}
