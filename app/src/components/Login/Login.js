@@ -29,11 +29,12 @@ const Login=()=>{
                 resetResponse();
             } 
         }
-    },[navigate, refreshToken, resetResponse, response, setAuthorizationToken]);
+    },[navigate, resetResponse, response, setAuthorizationToken]);
     useEffect(()=>{
         try {
             if(!response || response==={} || !response.data){
                 refreshToken();
+                
             }
         } catch (error) {
             console.log(error);          
@@ -46,7 +47,7 @@ const Login=()=>{
             const loginData={name:userName,password:password};
             login(loginData);            
         } catch (error) {
-            throw new Error(error);
+            console.log(error);
         }
     };
 

@@ -7,14 +7,13 @@
 body {
   min-height: 100dvh;
   font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
+
   background-color: #efefef;
+  width: 100%;
 }
 
 .App{
-
+  min-width: 100%;
   min-height: 100dvh;
 }
 

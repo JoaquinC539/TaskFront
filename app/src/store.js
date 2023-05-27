@@ -12,6 +12,8 @@ export default createStore({
     setAuthorizationToken:action((state,payload)=>{state.authorizationToken=payload}),
     error:{},
     setError:action((state,payload)=>{state.error=payload}),
+    authentication:false,
+    setAuthentication:action((state,payload)=>{state.authentication=payload}),
 
     response:{},
     setResponse:action((state,payload)=>{state.response=payload}),
@@ -56,6 +58,21 @@ export default createStore({
             actions.setResponse(error);
         }
     }),
-
-
+    checkAuthorization:thunk(async (actions,nopay,helpers)=>{
+        try {
+            const {authorizationToken}=helpers.getState();
+            const response=await api.get('/check',{
+                headers:{
+                    'Authorization':authorizationToken}
+            });
+            if(response.status<400){
+                actions.setAuthentication(true);
+            } else{
+                actions.setAuthentication(false);
+            }
+        } catch (error) {
+            actions.setAuthentication(false);
+            console.log(error.response);
+        }
+    }),
 });

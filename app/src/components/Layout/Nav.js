@@ -5,7 +5,6 @@ const Nav=()=>{
         <li className="nav-item"><NavLink  className="nav-link"  activeclassname="active" to="/">Home</NavLink></li>
         <li className="nav-item"><NavLink  className="nav-link"  activeclassname="active" to="team">Team</NavLink></li>
         <li className="nav-item"><NavLink  className="nav-link" activeclassname="active" to="login">Login</NavLink></li>
-        <li className="nav-item"><NavLink  className="nav-link" activeclassname="active" to="dash">Dashboard</NavLink></li>
         <li className="nav-item"><NavLink  className="nav-link" activeclassname="active" to="about">About</NavLink></li>
      </ul>   
     )

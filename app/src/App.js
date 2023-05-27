@@ -5,6 +5,7 @@ import About from "./components/About/About"
 import Login from './components/Login/Login'
 import Dash from './components/Dash/Dash';
 import Team from './components/Team/Team';
+import PrivateRoute from './components/Dash/PrivateRoute';
 function App() {
   return (
     <Routes>
@@ -12,7 +13,8 @@ function App() {
         <Route index element={<LandPage />}></Route>
         <Route path="about" element={<About />}/>
         <Route path="login" element={<Login />}/>
-        <Route path="dash" element={<Dash />} />
+        <Route path="dash" element={<PrivateRoute><Dash /></PrivateRoute>} />
+
         <Route path="team" element={<Team />} />
       </Route>
     </Routes>
